@@ -131,7 +131,12 @@ class Epl(Resource):
     def get(self,team_id):
         return epl_teams[str(team_id).lower()]
     
+class Test(Resource):
+    def get():
+        return 'Tirimo'
+
 api.add_resource(Epl, '/team/<string:team_id>')
+api.add_resource(Test, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)
